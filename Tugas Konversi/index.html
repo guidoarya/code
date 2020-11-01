@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predikat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>Perhitungan Nilai dengan JavaScript</h1>
+        <table>
+            <tr>
+                <td><label>Nilai Anda</label></td>
+                <td>: <input type="number" id="nilai"></td>
+            </tr>
+
+        <tr> 
+                <td><label>Anda Mendapatkan Predikat</label></td>
+                <td>: <input type="text" id="predikat" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button type="submit" id="hasil">Hasilnya</button></td>
+            </tr>
+        </table>
+    </div>
+<script>
+    var buttonHasil = document.getElementById("hasil");
+    buttonHasil.addEventListener("click", function hasil(x) {
+        x.preventDefault()
+        var nilai = document.getElementById("nilai").value
+
+        if (nilai <= 40) {
+            document.getElementById("predikat").value="E";
+        }
+        else if (nilai > 40 && nilai <= 55){
+            document.getElementById("predikat").value="D";
+        }
+        else if (nilai > 55 && nilai <= 60){
+            document.getElementById("predikat").value="C"
+        }
+        else if (nilai > 60 && nilai <= 65){
+            document.getElementById("predikat").value="BC"
+        }
+        else if (nilai > 65 && nilai <= 70){
+            document.getElementById("predikat").value="B"
+        }
+        else if (nilai > 70 && nilai <= 80){
+            document.getElementById("predikat").value="AB"
+        }
+        else if (nilai > 80 && nilai <= 100){
+            document.getElementById("predikat").value="A"
+        }
+        else{
+            document.getElementById("predikat").value="Salah Input!"
+        }
+    })
+</script>
+
+</body>
+</html>
